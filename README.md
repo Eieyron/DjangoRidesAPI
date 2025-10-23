@@ -198,7 +198,7 @@ The output:
 |2|2025-10|3|
 
 is correct and is ideal because the database has 5 trips that have exceeded more than 1hr, other trips have not exceeded 1hr.  
-At the same time, I made it so that the data has 2 drivers, 1 trip for id:1, and 4 trips for id:2 -- which matched the results correctly, as compared to the image below (from djang-admin).
+At the same time, I made it so that the data has 2 drivers, 1 trip for id:1, and 4 trips for id:2 -- which matched the results correctly, as compared to the image below (from django-admin).
 
 ![django-admin-screenshot](django-admin-ss.png)
 
