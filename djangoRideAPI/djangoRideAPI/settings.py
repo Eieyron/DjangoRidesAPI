@@ -54,12 +54,18 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
+        'djangoRideAPI.permissions.IsRoleAdmin'
     ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
-LOGIN_REDIRECT_URL = 'api/users/'
+# accessible to all
+PUBLIC_ENDPOINTS = [
+    '/api-auth/login/',
+    '/api-auth/logout/',
+]
+
+LOGIN_REDIRECT_URL = '/api/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
