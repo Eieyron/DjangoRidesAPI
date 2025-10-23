@@ -83,7 +83,7 @@ Designed with **large-scale data efficiency** in mind.
 | `page` | `int` | Paginate results |
 
 Example:
-GET /api/rides/?status=pickup&rider_email=john@example.com&latitude=14.609053&longitude=121.022256&order=-distance
+```GET /api/rides/?status=pickup&rider_email=john@example.com&latitude=14.609053&longitude=121.022256&order=-distance```
 
 ---
 
@@ -140,6 +140,7 @@ We want a monthly count of trips (per driver) that took more than 1 hour from pi
 Duration = time difference between the pickup and dropoff events.
 
 ### For SQLITE3
+```sql
 WITH trips AS (
     SELECT
         p.id_ride_event  AS pickup_event_id,
@@ -173,6 +174,7 @@ GROUP BY
 ORDER BY
     trip_month,
     driver_id;
+```
 
 ### Explanation
 - For this, what I did was I created a temporary table called `trips` with a query that lists all the trips with the same ride events
