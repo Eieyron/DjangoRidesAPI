@@ -85,6 +85,8 @@ Designed with **large-scale data efficiency** in mind.
 Example:
 GET /api/rides/?status=pickup&rider_email=john@example.com&latitude=14.609053&longitude=121.022256&order=-distance
 
+---
+
 ## 🧰 Setup Instructions
 
 ### Clone repository
@@ -107,6 +109,8 @@ python manage.py createsuperuser
 ### Run server
 python manage.py runserver
 
+---
+
 ## Tech Stack
 
 Python 3.12+
@@ -114,6 +118,8 @@ Django 5.x
 Django REST Framework
 SQLite / PostgreSQL
 Django Session Authentication
+
+---
 
 ## 🏁 Summary
 | Goal                           | Status      |
@@ -124,6 +130,8 @@ Django Session Authentication
 | Ride List API                  | ✅ Completed |
 | Filtering, Sorting, Pagination | ✅ Completed |
 | Performance Optimizations      | ✅ Completed |
+
+---
 
 “Build APIs not just to function — but to scale gracefully.” 🚀
 
