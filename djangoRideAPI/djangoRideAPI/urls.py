@@ -20,10 +20,12 @@ from rest_framework import routers
 
 from User.serializers import UserViewSet
 from Ride.serializers import RideViewSet
+from RideEvent.serializers import RideEventViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'rides', RideViewSet)
+router.register(r'rideEvents', RideEventViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
