@@ -1,5 +1,6 @@
 from django.db import models
 from Ride.models import Ride
+from django.utils import timezone
 
 # Create your models here.
 class RideEvent(models.Model):
@@ -7,7 +8,7 @@ class RideEvent(models.Model):
     id_ride_event = models.AutoField(primary_key=True)
     id_ride = models.ForeignKey(Ride, on_delete=models.CASCADE, related_name='ride_events')
     description = models.CharField(max_length = 150)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=timezone.now, editable=True)
 
     class Meta:
         verbose_name = "RideEvent"

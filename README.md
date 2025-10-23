@@ -133,6 +133,61 @@ Django Session Authentication
 
 ---
 
+## SQL Challenge
+We want a monthly count of trips (per driver) that took more than 1 hour from pickup to dropoff, where:
+“pickup” = event with description = 'Status changed to Pickup'
+“dropoff” = event with description = 'Status changed to Dropoff'
+Duration = time difference between the pickup and dropoff events.
+
+### For SQLITE3
+WITH trips AS (
+    SELECT
+        p.id_ride_event  AS pickup_event_id,
+        p.id_ride_id        AS ride_id,
+        p.created_at     AS pickup_time,
+        (
+            SELECT d.created_at
+            FROM RideEvent_rideevent d
+            WHERE d.id_ride_id = p.id_ride_id
+              AND d.description = 'Status changed to Dropoff'
+              AND d.created_at > p.created_at
+            ORDER BY d.created_at
+            LIMIT 1
+        ) AS dropoff_time
+    FROM RideEvent_rideevent p
+    WHERE p.description = 'Status changed to Pickup'
+)
+SELECT
+    r.id_driver_id                           AS driver_id,
+    strftime('%Y-%m', t.dropoff_time)       AS trip_month,
+    COUNT(*)                                 AS trips_over_1_hour
+FROM trips t
+JOIN Ride_ride r ON r.id_ride = t.ride_id
+WHERE
+    t.dropoff_time IS NOT NULL
+    -- duration in hours: (julianday(dropoff) - julianday(pickup)) * 24
+    AND ((julianday(t.dropoff_time) - julianday(t.pickup_time)) * 24) > 1
+GROUP BY
+    r.id_driver_id,
+    strftime('%Y-%m', t.dropoff_time)
+ORDER BY
+    trip_month,
+    driver_id;
+
+### Explanation
+- For this, what I did was I created a temporary table called `trips` with a query that lists all the trips with the same ride events
+- then from that trips table, i joined it with the `ride` table
+- after joining, I only took the trip with more than 1hr (based on julianday computation)
+- then grouped it by the month of the trip and the driver id
+
+#### if PostgreSQL
+I will be using a different way to compute the time duration, but everything else is pretty much the same
+
+### Output Screenshot
+![SQLOutputImage][sql-output.png]
+
+---
+
 “Build APIs not just to function — but to scale gracefully.” 🚀
 
 Author: Aaron Magnaye
