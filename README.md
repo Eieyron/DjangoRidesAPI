@@ -190,8 +190,8 @@ I will be using a different way to compute the time duration, but everything els
 
 ---
 
-“Build APIs not just to function — but to scale gracefully.” 🚀
+“Build APIs not just to function — but to scale gracefully.” 🚀  
 
-Author: Aaron Magnaye
-License: MIT
+Author: Aaron Magnaye  
+License: MIT  
 Repository: https://github.com/Eieyron/DjangoRidesAPI
