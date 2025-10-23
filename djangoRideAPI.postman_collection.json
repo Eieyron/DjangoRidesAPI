@@ -1,0 +1,1682 @@
+{
+	"info": {
+		"_postman_id": "60f106d9-4824-4f33-acf4-09a01739cec8",
+		"name": "djangoRideAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27285751"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "list users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/users/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/users/1/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "csrfmiddlewaretoken",
+									"value": "{{csrftoken}}",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "rider3",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "rider3",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "three",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "riderthree@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "rider",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "09555555555",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-url}}/api/users/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "created user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "csrfmiddlewaretoken",
+											"value": "{{csrftoken}}",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "rider2",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "rider",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "two",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ridertwo@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "rider",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "09555555555",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api-url}}/api/users/",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 06:23:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Location",
+									"value": "http://127.0.0.1:8000/api/users/4/"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://127.0.0.1:8000/api/users/4/\",\n    \"username\": \"rider2\",\n    \"first_name\": \"rider\",\n    \"last_name\": \"two\",\n    \"email\": \"ridertwo@gmail.com\",\n    \"role\": \"rider\",\n    \"phone\": \"09555555555\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "{{csrftoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"http://localhost:8000/api/users/4/\",\n    \"username\": \"rider2\",\n    \"first_name\": \"rider3\",\n    \"last_name\": \"two2\",\n    \"email\": \"ridertwo@gmail.com\",\n    \"role\": \"rider\",\n    \"phone\": \"09555555555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/api/users/4/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"4",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update users",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "{{csrftoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://localhost:8000/api/users/4/\",\n    \"username\": \"rider2\",\n    \"first_name\": \"rider3\",\n    \"last_name\": \"two2\",\n    \"email\": \"ridertwo@gmail.com\",\n    \"role\": \"rider\",\n    \"phone\": \"09555555555\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/api/users/4/",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"4",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 06:40:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://127.0.0.1:8000/api/users/4/\",\n    \"username\": \"rider2\",\n    \"first_name\": \"rider3\",\n    \"last_name\": \"two2\",\n    \"email\": \"ridertwo@gmail.com\",\n    \"role\": \"rider\",\n    \"phone\": \"09555555555\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "{{csrftoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"http://localhost:8000/api/users/4/\",\n    \"username\": \"rider2\",\n    \"first_name\": \"rider3\",\n    \"last_name\": \"two2\",\n    \"email\": \"ridertwo@gmail.com\",\n    \"role\": \"rider\",\n    \"phone\": \"09555555555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/api/users/5/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"5",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleted user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "{{csrftoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://localhost:8000/api/users/4/\",\n    \"username\": \"rider2\",\n    \"first_name\": \"rider3\",\n    \"last_name\": \"two2\",\n    \"email\": \"ridertwo@gmail.com\",\n    \"role\": \"rider\",\n    \"phone\": \"09555555555\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/api/users/5/",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"5",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 06:41:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get CSRFToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Extract csrftoken from cookies",
+									"let cookies = pm.cookies.toObject();",
+									"",
+									"if (cookies.csrftoken) {",
+									"    pm.environment.set(\"csrftoken\", cookies.csrftoken);",
+									"    console.log(\"CSRF token stored from cookies:\", cookies.csrftoken);",
+									"} else {",
+									"    console.warn(\"CSRF token not found in cookies.\");",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "3WkAiNeaXRKah3brLv9IGE8n2SkJ2kkh",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "aaronmagnaye",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Airken1399",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-url}}/api-auth/login/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api-auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Extract csrftoken from cookies",
+									"let cookies = pm.cookies.toObject();",
+									"",
+									"if (cookies.csrftoken) {",
+									"    pm.environment.set(\"csrftoken\", cookies.csrftoken);",
+									"    console.log(\"CSRF token stored from cookies:\", cookies.csrftoken);",
+									"} else {",
+									"    console.warn(\"CSRF token not found in cookies.\");",
+									"}",
+									"",
+									"if (cookies.sessionid) {",
+									"    pm.environment.set(\"sessionid\", cookies.sessionid);",
+									"    console.log(\"sessionid stored from cookies:\", cookies.sessionid);",
+									"} else {",
+									"    console.warn(\"sessionid not found in cookies.\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "{{csrftoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "aaronmagnaye",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Airken1399",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-url}}/api-auth/login/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api-auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "{{csrftoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "aaronmagnaye",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Airken1399",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api-url}}/api-auth/login/",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api-auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 06:32:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"users\": \"http://127.0.0.1:8000/api/users/\",\n    \"rides\": \"http://127.0.0.1:8000/api/rides/\",\n    \"rideEvents\": \"http://127.0.0.1:8000/api/rideEvents/\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Rides",
+			"item": [
+				{
+					"name": "list rides",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/rides/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "forbidden response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-url}}/api/rides/",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"rides",
+										""
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 06:25:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+						},
+						{
+							"name": "list rides",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-url}}/api/rides/?page=2",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"rides",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 06:47:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2325"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 7,\n    \"next\": \"http://127.0.0.1:8000/api/rides/?page=3\",\n    \"previous\": \"http://127.0.0.1:8000/api/rides/\",\n    \"results\": [\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/5/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n                \"username\": \"aaronmagnaye\",\n                \"first_name\": \"Aaron\",\n                \"last_name\": \"Magnaye\",\n                \"email\": \"aaronvelascomagnaye@gmail.com\",\n                \"role\": \"admin\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 4,\n            \"pickup_longitude\": 1,\n            \"dropoff_latitude\": 1,\n            \"dropoff_longitude\": 1,\n            \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n            \"distance\": 333.585,\n            \"todays_ride_events\": []\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/6/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/3/\",\n                \"username\": \"rider1\",\n                \"first_name\": \"ridername\",\n                \"last_name\": \"riderlastname\",\n                \"email\": \"rider@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 3,\n            \"pickup_longitude\": 1,\n            \"dropoff_latitude\": 1,\n            \"dropoff_longitude\": 1,\n            \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n            \"distance\": 222.39,\n            \"todays_ride_events\": [\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/rideEvents/1/\",\n                    \"id_ride\": \"http://127.0.0.1:8000/api/rides/6/\",\n                    \"description\": \"picked up a friend\",\n                    \"created_at\": \"2025-10-22T16:47:40.306008Z\"\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/rideEvents/2/\",\n                    \"id_ride\": \"http://127.0.0.1:8000/api/rides/6/\",\n                    \"description\": \"stopped at walmart\",\n                    \"created_at\": \"2025-10-23T03:19:39.988320Z\"\n                }\n            ]\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/7/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n                \"username\": \"aaronmagnaye\",\n                \"first_name\": \"Aaron\",\n                \"last_name\": \"Magnaye\",\n                \"email\": \"aaronvelascomagnaye@gmail.com\",\n                \"role\": \"admin\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 14.554729,\n            \"pickup_longitude\": 121.024445,\n            \"dropoff_latitude\": 14.599512,\n            \"dropoff_longitude\": 120.984222,\n            \"pickup_time\": \"2025-10-23T05:03:50.227349Z\",\n            \"distance\": 6.598,\n            \"todays_ride_events\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create rides",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "csrfmiddlewaretoken",
+									"value": "{{csrftoken}}",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "en-route",
+									"type": "text"
+								},
+								{
+									"key": "rider_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "driver_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "pickup_latitude",
+									"value": "14.554729",
+									"type": "text"
+								},
+								{
+									"key": "pickup_longitude",
+									"value": "121.024445",
+									"type": "text"
+								},
+								{
+									"key": "dropoff_latitude",
+									"value": "14.599512",
+									"type": "text"
+								},
+								{
+									"key": "dropoff_longitude",
+									"value": "120.984222",
+									"type": "text"
+								},
+								{
+									"key": "pickup_time",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-url}}/api/rides/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "paginated: list rides",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/rides/?page_size=4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rides",
+								""
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter by rider email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/rides/?id_rider__email=rider@gmail.com",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								""
+							],
+							"query": [
+								{
+									"key": "id_rider__email",
+									"value": "rider@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter by status",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/rides/?status=pickup",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pickup"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve Ride",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/rides/1/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order by pickup_time",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/rides/?order=-pickup_time",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								""
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "-pickup_time"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order by distance",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/rides/?latitude=14.609053&longitude=121.022256&order=-distance",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								""
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "14.609053"
+								},
+								{
+									"key": "longitude",
+									"value": "121.022256"
+								},
+								{
+									"key": "order",
+									"value": "-distance"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "order by distance with proper given longitude and latitude",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-url}}/api/rides/?latitude=14.609053&longitude=121.022256&order=-distance",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"rides",
+										""
+									],
+									"query": [
+										{
+											"key": "latitude",
+											"value": "14.609053"
+										},
+										{
+											"key": "longitude",
+											"value": "121.022256"
+										},
+										{
+											"key": "order",
+											"value": "-distance"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 07:37:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2191"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 7,\n    \"next\": \"http://127.0.0.1:8000/api/rides/?latitude=14.609053&longitude=121.022256&order=-distance&page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/1/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n                \"username\": \"aaronmagnaye\",\n                \"first_name\": \"Aaron\",\n                \"last_name\": \"Magnaye\",\n                \"email\": \"aaronvelascomagnaye@gmail.com\",\n                \"role\": \"admin\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 1,\n            \"pickup_longitude\": 1,\n            \"dropoff_latitude\": 1,\n            \"dropoff_longitude\": 1,\n            \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n            \"distance\": 13194.923729180167,\n            \"todays_ride_events\": [\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/rideEvents/3/\",\n                    \"id_ride\": \"http://127.0.0.1:8000/api/rides/1/\",\n                    \"description\": \"testing event\",\n                    \"created_at\": \"2025-10-23T04:53:58.569756Z\"\n                }\n            ]\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/2/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n                \"username\": \"aaronmagnaye\",\n                \"first_name\": \"Aaron\",\n                \"last_name\": \"Magnaye\",\n                \"email\": \"aaronvelascomagnaye@gmail.com\",\n                \"role\": \"admin\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 1,\n            \"pickup_longitude\": 1,\n            \"dropoff_latitude\": 1,\n            \"dropoff_longitude\": 1,\n            \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n            \"distance\": 13194.923729180167,\n            \"todays_ride_events\": []\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/3/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n                \"username\": \"aaronmagnaye\",\n                \"first_name\": \"Aaron\",\n                \"last_name\": \"Magnaye\",\n                \"email\": \"aaronvelascomagnaye@gmail.com\",\n                \"role\": \"admin\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 1,\n            \"pickup_longitude\": 1,\n            \"dropoff_latitude\": 1,\n            \"dropoff_longitude\": 1,\n            \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n            \"distance\": 13194.923729180167,\n            \"todays_ride_events\": []\n        }\n    ]\n}"
+						},
+						{
+							"name": "order by distance without proper longitude and latitude",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-url}}/api/rides/?order=-distance",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"rides",
+										""
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "-distance"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 07:38:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2061"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 7,\n    \"next\": \"http://127.0.0.1:8000/api/rides/?order=-distance&page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/1/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n                \"username\": \"aaronmagnaye\",\n                \"first_name\": \"Aaron\",\n                \"last_name\": \"Magnaye\",\n                \"email\": \"aaronvelascomagnaye@gmail.com\",\n                \"role\": \"admin\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 1,\n            \"pickup_longitude\": 1,\n            \"dropoff_latitude\": 1,\n            \"dropoff_longitude\": 1,\n            \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n            \"todays_ride_events\": [\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/rideEvents/3/\",\n                    \"id_ride\": \"http://127.0.0.1:8000/api/rides/1/\",\n                    \"description\": \"testing event\",\n                    \"created_at\": \"2025-10-23T04:53:58.569756Z\"\n                }\n            ]\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/2/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n                \"username\": \"aaronmagnaye\",\n                \"first_name\": \"Aaron\",\n                \"last_name\": \"Magnaye\",\n                \"email\": \"aaronvelascomagnaye@gmail.com\",\n                \"role\": \"admin\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 1,\n            \"pickup_longitude\": 1,\n            \"dropoff_latitude\": 1,\n            \"dropoff_longitude\": 1,\n            \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n            \"todays_ride_events\": []\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/rides/3/\",\n            \"status\": \"en-route\",\n            \"id_rider\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n                \"username\": \"aaronmagnaye\",\n                \"first_name\": \"Aaron\",\n                \"last_name\": \"Magnaye\",\n                \"email\": \"aaronvelascomagnaye@gmail.com\",\n                \"role\": \"admin\",\n                \"phone\": \"09564334502\"\n            },\n            \"id_driver\": {\n                \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n                \"username\": \"test\",\n                \"first_name\": \"test\",\n                \"last_name\": \"test\",\n                \"email\": \"test@gmail.com\",\n                \"role\": \"rider\",\n                \"phone\": \"test\"\n            },\n            \"pickup_latitude\": 1,\n            \"pickup_longitude\": 1,\n            \"dropoff_latitude\": 1,\n            \"dropoff_longitude\": 1,\n            \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n            \"todays_ride_events\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update Ride",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "{{csrftoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"http://localhost:8000/api/rides/5/\",\n    \"status\": \"en-route\",\n    \"id_rider\": {\n        \"url\": \"http://localhost:8000/api/users/1/\",\n        \"username\": \"aaronmagnaye\",\n        \"first_name\": \"Aaron\",\n        \"last_name\": \"Magnaye\",\n        \"email\": \"aaronvelascomagnaye@gmail.com\",\n        \"role\": \"admin\",\n        \"phone\": \"09564334502\"\n    },\n    \"id_driver\": {\n        \"url\": \"http://localhost:8000/api/users/2/\",\n        \"username\": \"test\",\n        \"first_name\": \"test\",\n        \"last_name\": \"test\",\n        \"email\": \"test@gmail.com\",\n        \"role\": \"rider\",\n        \"phone\": \"test\"\n    },\n    \"pickup_latitude\": 4.0,\n    \"pickup_longitude\": 1.0,\n    \"dropoff_latitude\": 1.0,\n    \"dropoff_longitude\": 1.0,\n    \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n    \"distance\": 0.0,\n    \"todays_ride_events\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/api/rides/5/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								"5",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update Ride (updated status and distance)",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "{{csrftoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://localhost:8000/api/rides/5/\",\n    \"status\": \"en-route\",\n    \"id_rider\": {\n        \"url\": \"http://localhost:8000/api/users/1/\",\n        \"username\": \"aaronmagnaye\",\n        \"first_name\": \"Aaron\",\n        \"last_name\": \"Magnaye\",\n        \"email\": \"aaronvelascomagnaye@gmail.com\",\n        \"role\": \"admin\",\n        \"phone\": \"09564334502\"\n    },\n    \"id_driver\": {\n        \"url\": \"http://localhost:8000/api/users/2/\",\n        \"username\": \"test\",\n        \"first_name\": \"test\",\n        \"last_name\": \"test\",\n        \"email\": \"test@gmail.com\",\n        \"role\": \"rider\",\n        \"phone\": \"test\"\n    },\n    \"pickup_latitude\": 4.0,\n    \"pickup_longitude\": 1.0,\n    \"dropoff_latitude\": 1.0,\n    \"dropoff_longitude\": 1.0,\n    \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n    \"distance\": 0.0,\n    \"todays_ride_events\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/api/rides/5/",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"rides",
+										"5",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 06:44:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "614"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://127.0.0.1:8000/api/rides/5/\",\n    \"status\": \"en-route\",\n    \"id_rider\": {\n        \"url\": \"http://127.0.0.1:8000/api/users/1/\",\n        \"username\": \"aaronmagnaye\",\n        \"first_name\": \"Aaron\",\n        \"last_name\": \"Magnaye\",\n        \"email\": \"aaronvelascomagnaye@gmail.com\",\n        \"role\": \"admin\",\n        \"phone\": \"09564334502\"\n    },\n    \"id_driver\": {\n        \"url\": \"http://127.0.0.1:8000/api/users/2/\",\n        \"username\": \"test\",\n        \"first_name\": \"test\",\n        \"last_name\": \"test\",\n        \"email\": \"test@gmail.com\",\n        \"role\": \"rider\",\n        \"phone\": \"test\"\n    },\n    \"pickup_latitude\": 4,\n    \"pickup_longitude\": 1,\n    \"dropoff_latitude\": 1,\n    \"dropoff_longitude\": 1,\n    \"pickup_time\": \"2025-10-23T03:35:13.624234Z\",\n    \"distance\": 333.585,\n    \"todays_ride_events\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Ride",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "{{csrftoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api-url}}/api/rides/4/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rides",
+								"4",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete Ride",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "{{csrftoken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api-url}}/api/rides/4/",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"api",
+										"rides",
+										"4",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Oct 2025 06:45:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.13.3"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "RideEvents",
+			"item": [
+				{
+					"name": "list RideEvents",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-url}}/api/rideEvents/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rideEvents",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve RideEvent",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "csrfmiddlewaretoken",
+									"value": "{{csrftoken}}",
+									"type": "text"
+								},
+								{
+									"key": "id_ride",
+									"value": "{{api-url}}/api/rides/5/",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "testing event 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-url}}/api/rideEvents/1/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rideEvents",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create RideEvent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "csrfmiddlewaretoken",
+									"value": "{{csrftoken}}",
+									"type": "text"
+								},
+								{
+									"key": "id_ride",
+									"value": "{{api-url}}/api/rides/1/",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Status changed to Pickup",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-url}}/api/rideEvents/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rideEvents",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update RideEvent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "{{csrftoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "csrfmiddlewaretoken",
+									"value": "{{csrftoken}}",
+									"type": "text"
+								},
+								{
+									"key": "id_ride",
+									"value": "{{api-url}}/api/rides/5/",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "testing event 2 updated 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-url}}/api/rideEvents/5/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rideEvents",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete RideEvent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "{{csrftoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api-url}}/api/rideEvents/4/",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"api",
+								"rideEvents",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
