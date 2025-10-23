@@ -90,6 +90,12 @@ class RideViewSet(viewsets.ModelViewSet):
             )
         )
 
+        """
+        Possible todo: fix the queryset such that only the relevant rides to the logged user
+        is seen? currently the setup only allows for the admin to see everything. but this will
+        be faster if the annotation is only available per logged in user
+        """
+
         sort_by_distance = False
         ref_lat = self.request.query_params.get('latitude')
         ref_lon = self.request.query_params.get('longitude')
