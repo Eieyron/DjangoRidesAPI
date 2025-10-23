@@ -184,7 +184,7 @@ ORDER BY
 I will be using a different way to compute the time duration, but everything else is pretty much the same
 
 ### Output Screenshot
-![SQLOutputImage][sql-output.png]
+![SQL Output Image](sql-output.png)
 
 ---
 
