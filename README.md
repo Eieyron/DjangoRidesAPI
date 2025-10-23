@@ -82,7 +82,7 @@ Designed with **large-scale data efficiency** in mind.
 | `longitude` | `float` | Used for distance-based sorting (needed for sorting with `distance`) |
 | `page` | `int` | Paginate results |
 
-Example:
+Example:  
 ```GET /api/rides/?status=pickup&rider_email=john@example.com&latitude=14.609053&longitude=121.022256&order=-distance```
 
 ---
@@ -134,10 +134,10 @@ Django Session Authentication
 ---
 
 ## SQL Challenge
-We want a monthly count of trips (per driver) that took more than 1 hour from pickup to dropoff, where:
-“pickup” = event with description = 'Status changed to Pickup'
-“dropoff” = event with description = 'Status changed to Dropoff'
-Duration = time difference between the pickup and dropoff events.
+We want a monthly count of trips (per driver) that took more than 1 hour from pickup to dropoff, where:  
+“pickup” = event with description = 'Status changed to Pickup'  
+“dropoff” = event with description = 'Status changed to Dropoff'  
+Duration = time difference between the pickup and dropoff events.  
 
 ### For SQLITE3
 ```sql
