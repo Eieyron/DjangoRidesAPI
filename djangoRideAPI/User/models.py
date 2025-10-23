@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
 
-    id_ride = models.AutoField(primary_key=True)
+    id_user = models.AutoField(primary_key=True)
     role = models.CharField(
         max_length=10,
         choices=[
