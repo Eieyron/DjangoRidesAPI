@@ -87,24 +87,24 @@ GET /api/rides/?status=pickup&rider_email=john@example.com&latitude=14.609053&lo
 
 ## 🧰 Setup Instructions
 
-# Clone repository
+### Clone repository
 git clone https://github.com/Eieyron/DjangoRidesAPI.git
 cd DjangoRidesAPI
 
-# Create virtual environment
+### Create virtual environment
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate (Windows)
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Run migrations
+### Run migrations
 python manage.py migrate
 
-# Create superuser (admin)
+### Create superuser (admin)
 python manage.py createsuperuser
 
-# Run server
+### Run server
 python manage.py runserver
 
 ## Tech Stack
